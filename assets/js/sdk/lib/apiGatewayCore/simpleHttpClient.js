@@ -60,6 +60,9 @@ apiGateway.core.simpleHttpClientFactory.newClient = function (config) {
         }
 
         var body = apiGateway.core.utils.copy(request.body);
+        headers['Access-Control-Allow-Origin'] = '*';
+        headers['Access-Control-Allow-Methods'] = 'OPTIONS, GET, POST';
+        headers['Access-Control-Allow-Headers'] = 'Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control';
         if (body === undefined) {
             body = '';
         }
