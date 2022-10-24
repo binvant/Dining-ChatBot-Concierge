@@ -28,7 +28,7 @@ def findRestaurantFromElasticSearch(cuisine):
     host = 'search-restaurants-g7syvrxcwt3lgf4ce55vgsrjtu.us-east-1.es.amazonaws.com'
     index = 'restaurants'
     url = 'https://' + host + '/' + index + '/_search'
-    # i am just getting 3 buisiness id from es but its not random rn
+    # Getting 3 business IDs from ElasticSearch
     query = {
         "size": 1300,
         "query": {
@@ -94,7 +94,7 @@ def sendEmail(msgToSend,EmailAddress):
             },
             "Subject": {
                 "Charset": "UTF-8",
-                "Data": "Dining Recommendations!",
+                "Data": "Your Dining Recommendations Are Here!",
             },
         },
         Source="bsb9397@nyu.edu",
