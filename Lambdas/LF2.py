@@ -122,9 +122,9 @@ def lambda_handler(event, context):
             # now we will create the required message using the details
             msgToSend = getMsgToSend(restaurantDetails,message)
             print(msgToSend)
-            # dont uncomment below line until required. There is max limit on msg
             EmailAddress = message['MessageAttributes']['EmailAddress']['StringValue']
             sendEmail(msgToSend,EmailAddress)
             #now delete message from queue
             receipt_handle = message['ReceiptHandle']
             deleteMsg(receipt_handle)
+            return "Recommendation sent"
